@@ -1,0 +1,23 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.login{
+    background-color: $color-black-1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__button{
+        background-color: $color-green;
+        padding: 15px 25PX;
+        font-size: 25px;
+    }
+    &__image{
+        width: 100%;
+        max-width: 700px;
+        @include FromMin($x-large) {
+            max-width: 700px;
+        }
+    }
+}
