@@ -1,34 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { PageLoyaut } from '../templates/page-loyaut/Page-loyaut'
-import SpotifyService from '../../services/spotify-services';
-import { Button } from '../atoms/button/Button';
-import { Login } from './login';
+import { AppRouter } from '../../routers/AppRouter'
 
 export const App = () => {
-  const token = false
-  const [morty, setmorty] = useState();
-  console.log(morty)
-  const esto = () => {
-    const resp = SpotifyService.getMorty()
-    setmorty(resp);
-  }
-
+  const [user, setUser] = useState(false)
   useEffect(() => {
-    esto()
+    setUser(localStorage.getItem('accessToken'))
   }, [])
   
-  if (token) {
-    return (
-      <PageLoyaut>
-        <Button>Artistas</Button>
-      </PageLoyaut>
-    )
-
-  }else{
-
-    return(
-      <Login/>
-    )
-
-  }
+  return (
+    <>
+      <AppRouter/>
+    </>
+  )
 }

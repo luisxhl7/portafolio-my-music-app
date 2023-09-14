@@ -23,5 +23,3 @@ export const SCOPES = [
 ].join(' ');
 
 export const REDIRECT_URI = 'http://localhost:3000';
-
-
