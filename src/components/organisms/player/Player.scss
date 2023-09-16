@@ -1,0 +1,8 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.player{
+    height: 9vh;
+    width: 100%;
+    background-color: $color-black-1;
+}

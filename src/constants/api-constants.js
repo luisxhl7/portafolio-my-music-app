@@ -1,7 +1,7 @@
 const url = 'https://api.spotify.com/v1';
 
-export const getArtistByID = url + '/getArtistas';
+
 export const getUser = url + '/me';
-
-export const getMorty = 'https://rickandmortyapi.com/api/character/2';
-
+export const getAlbumsSaved = url + '/me/albums'
+export const getPlaylistSaved = url + '/me/playlists'
+export const getArtists = url + '/artists'

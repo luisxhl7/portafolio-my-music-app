@@ -1,8 +1,5 @@
-import { REDIRECT_URI, SCOPES, clientId } from "../constants/variables";
+import { REDIRECT_URI, SCOPES } from "../constants/variables";
 import { generateCodeChallenge, generateCodeVerifier } from "../utils/oauthUtils";
-
-const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
 
 // Función para redirigir al flujo de autenticación
 export const redirectToAuthCodeFlow = async (clientId) => {
@@ -25,43 +22,3 @@ export const redirectToAuthCodeFlow = async (clientId) => {
     console.error("Error al redirigir al flujo de autenticación:", error);
   }
 };
-
-// Función para obtener el token de acceso
-export const getAccessToken = async (clientId, code) => {
-  try {
-    const verifier = localStorage.getItem("verifier");
-
-    const tokenParams = new URLSearchParams();
-    tokenParams.append("client_id", clientId);
-    tokenParams.append("grant_type", "authorization_code");
-    tokenParams.append("code", code);
-    tokenParams.append("redirect_uri", REDIRECT_URI);
-    tokenParams.append("code_verifier", verifier);
-
-    const result = await fetch("https://accounts.spotify.com/api/token", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: tokenParams,
-    });
-    
-    const { access_token } = await result.json();
-    return access_token;
-  } catch (error) {
-    console.error("Error al obtener el token de acceso:", error);
-    // Maneja el error de manera adecuada, por ejemplo, mostrando un mensaje al usuario.
-    throw error;
-  }
-};
-
-// Manejo principal
-if (code) {
-  (async () => {
-    try {
-      const accessToken = await getAccessToken(clientId, code);
-      window.localStorage.setItem("accessToken", accessToken);
-      console.log(accessToken);
-    } catch (error) {
-      console.error("Error en el manejo principal:", error);
-    }
-  })();
-}

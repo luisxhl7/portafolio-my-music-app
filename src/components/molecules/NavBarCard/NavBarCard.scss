@@ -1,0 +1,42 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.NavBarCard{
+    background-color: transparent;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    &__title{
+        color: $color-white;
+        font-size: 1rem;
+        font-weight: 400;
+        width: 210px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__description{
+        color: $color-text-grey;
+        font-size: 0.875rem;
+        font-weight: 400;
+        width: 210px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &:hover{
+        background-color: $color-grey;
+    }
+    & .--image-NavBarCard{
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        margin: 0px 7px 0px 7px;
+    }
+    & .--radius-image{
+        border-radius: 50%;
+    }
+}

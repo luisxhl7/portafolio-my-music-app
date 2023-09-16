@@ -5,10 +5,10 @@ export const Image = ({src, alt, title, className}) => {
     return (
         <figure>
             <img
-                className={`image ${className}`} 
-                src={src} 
-                alt={alt} 
-                title={title}
+                className={`image ${className}`}
+                src={src ? src : ''} 
+                alt={alt ? alt : ''} 
+                title={title ? title : ''}
             />
         </figure>
     )

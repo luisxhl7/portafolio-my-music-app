@@ -1,0 +1,78 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.navbar{
+    height: 91vh;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 0px 0px 0px 7px;
+    &__menu{
+        height: 11.5vh;
+        width: 100%;
+        background-color: $color-black-2;
+        margin: 1vh 0px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        &.--closeNavBar{
+            align-items: center;
+        }
+    }
+    &__library{
+        background-color: $color-black-2;
+        height: 77vh;
+        border-radius: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &.--closeNavBar{
+            align-items: center;
+        }
+    }
+    &__content-library{
+        margin-top: 25px;
+        padding: 0px 8px 0px 8px;
+        height: 64vh;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            transition: background-color 10s linear;
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &:hover{
+            &::-webkit-scrollbar-thumb {
+                background-color: #b3b3b352;
+                transition: background-color 10s linear;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: $color-text-grey;
+                transition: background-color 10s linear;
+            }
+        }
+        &.--closeNavBar{
+            height: 70vh;
+            padding: 0px 0px 0px 10px;
+        }
+    }
+    &__content-buttons-filters{
+        margin: 20px 0px 0px;
+        padding: 0px 0px 0px 14px;
+        display: flex;
+    }
+    &.--closeNavBar{
+        width: 70px;
+    }
+    & .--nav-library{
+        margin-top: 15px;
+    }
+    & .--remove-filter{
+        border-radius: 50%;
+        padding: 10px 15px;
+    }
+}
