@@ -16,9 +16,6 @@ export const Navbar = () => {
     const {playlistSaved} = useSelector((state) => state.playlistsSaved);
     const {artists} = useSelector((state) => state.artists);
 
-    console.log(loadAlbumSaved)
-
-
     const [filterCategory, setFilterCategory] = useState(localStorage.getItem('filterCategory'))
     const [closeNavBar, setCloseNavBar] = useState(JSON.parse(localStorage.getItem('closeNavBar')))
     
