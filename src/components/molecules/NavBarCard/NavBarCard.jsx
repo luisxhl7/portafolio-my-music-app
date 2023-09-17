@@ -1,7 +1,9 @@
 import React from 'react'
-import './NavBarCard.scss'
 import { Image } from '../../atoms/image'
-export const NavBarCard = ({image, title, description, id, category, closeNavBar}) => {
+import fondoGrey from '../../../assets/images/fondo-gris.png'
+import './NavBarCard.scss'
+
+export const NavBarCard = ({image, title, description, id, category, closeNavBar, load}) => {
 
     const handleGetContent = () => {
         console.log(id)
@@ -16,14 +18,14 @@ export const NavBarCard = ({image, title, description, id, category, closeNavBar
     >
         <Image
             className={`--image-NavBarCard ${!description && '--radius-image'}`}
-            src={image}
+            src={image ? image : fondoGrey}
             alt= {title}
             title= {title}
         />
         {!closeNavBar &&
             <div>
-                <p className='NavBarCard__title'>{title}</p>
-                <p className='NavBarCard__description'> {category} {description && `• ${description}`} </p>
+                <p className={`NavBarCard__title ${load ? '--load' : ''}`}>{title}</p>
+                <p className={`NavBarCard__description ${load ? '--load' : ''}`}> {category} {description && `• ${description}`} </p>
             </div>
         }
     </li>

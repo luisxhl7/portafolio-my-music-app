@@ -14,18 +14,28 @@
         font-size: 1rem;
         font-weight: 400;
         width: 210px;
+        height: 24px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-bottom: 4px;
+        &.--load{
+            background-color: $color-grey-hover;
+        }
     }
     &__description{
         color: $color-text-grey;
         font-size: 0.875rem;
         font-weight: 400;
         width: 210px;
+        height: 21px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        &.--load{
+            background-color: $color-grey-hover;
+            width: 170px;
+        }
     }
     &:hover{
         background-color: $color-grey;

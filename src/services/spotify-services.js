@@ -46,6 +46,14 @@ class SpotifyService {
   static getArtists = async () => {
     return axios.get(`${endPoints.getArtists}?ids=7vk5e3vY1uw9plTHJAMwjN%2C57dN52uHvrHOxijzpIgu3E%2C1vCWHaC5f2uS3yhpwWbIA6`);
   }
+  
+  static getAlbums = async () => {
+    return axios.get(`${endPoints.getAlbums}?offset=0&limit=18`);
+  }
+
+  static getFeaturedPlaylists = async () => {
+    return axios.get(`${endPoints.getFeaturedPlaylists}?offset=0&limit=9`);
+  }
 }
 
 export default SpotifyService;

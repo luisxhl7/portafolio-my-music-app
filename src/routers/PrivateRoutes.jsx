@@ -1,10 +1,11 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Home } from '../components/pages/home/Home'
+import { PageLoyaut } from '../components/templates/page-loyaut/Page-loyaut'
 
 export const PrivateRoutes = () => {
   return (
-    <>
+    <PageLoyaut>
       <Routes>
         <Route path = '/home' element = { <Home/> } />
         <Route path = '/perfil' element= { <>perfil</> }/>
@@ -12,6 +13,6 @@ export const PrivateRoutes = () => {
         <Route path = '/playlist/:id' element = { <>Playlist</> } />
         <Route path = '/' element = { <Navigate to = '/home' /> } />
       </Routes>
-    </>
+    </PageLoyaut>
   )
 }
