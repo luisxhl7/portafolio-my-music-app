@@ -8,6 +8,6 @@ export const getAlbumsSaved_thunks = () => {
             const {data} = await SpotifyService.getAlbumsSaved()
             dispatch( SET_ALBUMS_SAVED({albumsSaved: data}) );
             
-        }, 3000);
+        }, 1000);
     }
 }

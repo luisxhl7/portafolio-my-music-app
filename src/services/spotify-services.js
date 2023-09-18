@@ -54,6 +54,11 @@ class SpotifyService {
   static getFeaturedPlaylists = async () => {
     return axios.get(`${endPoints.getFeaturedPlaylists}?offset=0&limit=9`);
   }
+
+  static getSearch = async (search) => {
+    return axios.get(`${endPoints.getSearch}${search}&type=playlist`);
+  }
+  
 }
 
 export default SpotifyService;

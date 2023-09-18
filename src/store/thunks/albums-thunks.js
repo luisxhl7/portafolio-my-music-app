@@ -9,6 +9,6 @@ export const getAlbumsSaved_thunks = () => {
             const {data} = await SpotifyService.getAlbums()
             dispatch( SET_ALBUMS({albums: data.albums.items}) );
             
-        }, 3000);
+        }, 1000);
     }
 }

@@ -9,6 +9,6 @@ export const getArtists_thunks = () => {
             const {data} = await SpotifyService.getArtists()
             dispatch( SET_ARTISTS({artists: data.artists}) );
             
-        }, 3000);
+        }, 1000);
     }
 }

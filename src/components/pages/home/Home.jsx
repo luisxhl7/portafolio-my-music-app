@@ -64,7 +64,29 @@ export const Home = () => {
             />
           ))
         }
-      </div>    
+      </div> 
+      
+      <div className='home__content-cards'>
+        <h2 className='home__title-section'>Álbumes</h2>
+        {loadFeaturedPlaylists ?
+          Array.from({ length: 18 }, (_, index) => (
+            <CardCover
+              key={index}
+              id={index}
+              load={loadFeaturedPlaylists}
+            />
+          )) :  
+          albums?.map( item => (
+            <CardCover
+              key={item?.id}
+              id={item?.id}
+              image={item?.images[0].url}
+              title={item?.name}
+              description={item?.artists[0]?.name}
+            />
+          ))
+        }
+      </div>     
     </>
   )
 }

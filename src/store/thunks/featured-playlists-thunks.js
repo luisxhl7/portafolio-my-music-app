@@ -9,6 +9,6 @@ export const getArtists_thunks = () => {
             const {data} = await SpotifyService.getFeaturedPlaylists()
             dispatch( SET_FEATUREDPLAYLISTS({featuredPlaylists: data.playlists.items}) );
             
-        }, 3000);
+        }, 1000);
     }
 }

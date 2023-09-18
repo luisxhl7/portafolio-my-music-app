@@ -7,6 +7,6 @@ export const getUser_thunks = () => {
         setTimeout( async() => {
             const {data} = await SpotifyService.getUser()
             dispatch( SET_USER({user: data}) );
-        }, 3000);
+        }, 1000);
     }
 }

@@ -48,7 +48,7 @@ export const Navbar = () => {
             
             <div className={`navbar__menu ${ closeNavBar ? '--closeNavBar' : '' }`}>
                 <NavBarChoise title='Inicio' Icon={<Home/>} link='/home' closeNavBar={closeNavBar}/>
-                <NavBarChoise title='Buscar' Icon={<Search/>} link='/perfil' closeNavBar={closeNavBar}/>
+                <NavBarChoise title='Buscar' Icon={<Search/>} link='/search' closeNavBar={closeNavBar}/>
             </div> 
             
             <div className={`navbar__library ${ closeNavBar ? '--closeNavBar' : '' }`}>
