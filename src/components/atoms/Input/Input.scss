@@ -1,5 +1,6 @@
 @import '../../../style/mixins.scss';
 @import '../../../style/variables.scss';
+
 .input{
     background-color: $color-grey;
     width: 100%;
@@ -11,6 +12,9 @@
     align-items: center;
     border-radius: 500px;
     margin: 10px 0px 30px 20px;
+    &:active{
+        outline: auto;
+    }
     &__content{
         background-color: transparent;
         outline: none;

@@ -9,14 +9,14 @@ class SpotifyService {
     return axios.get(endPoints.getUser);
   }
   
-  static getAccessToken = async (clientId, code) => {
+  static getAccessToken = async (clientId) => {
     try {
       const verifier = localStorage.getItem("verifier");
   
       const tokenParams = new URLSearchParams();
       tokenParams.append("client_id", clientId);
       tokenParams.append("grant_type", "authorization_code");
-      tokenParams.append("code", code);
+      tokenParams.append("code", localStorage.getItem('code'));
       tokenParams.append("redirect_uri", REDIRECT_URI);
       tokenParams.append("code_verifier", verifier);
   
@@ -58,7 +58,10 @@ class SpotifyService {
   static getSearch = async (search) => {
     return axios.get(`${endPoints.getSearch}${search}&type=playlist`);
   }
-  
+  static getPlayListById = async (id) => {
+    return axios.get(`${endPoints.getPlayListById}/${id}`);
+  }
+  getPlayListById
 }
 
 export default SpotifyService;

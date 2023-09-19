@@ -15,7 +15,6 @@ export const SearchPage = () => {
     const location = useLocation();
     const {search, searchLoad} = useSelector( (state) => state.search);
 
-    console.log(search)
     const { q = '' } = queryString.parse( location.search);
     const numeroAleatorio = Math.floor(Math.random() * 26);
     const letraAleatoria = String.fromCharCode(97 + numeroAleatorio);
@@ -25,9 +24,13 @@ export const SearchPage = () => {
     })
     
     useEffect(() => {
-        navigate(`?q=${ searchText.toLowerCase().trim() }`)
-        dispatch(getSearch_thunks(searchText ? searchText : letraAleatoria))
-    }, [searchText])
+        if (searchText) {
+            navigate(`?q=${ searchText.toLowerCase().trim() }`)
+            dispatch(getSearch_thunks(searchText))
+        }else{
+            dispatch(getSearch_thunks(letraAleatoria))
+        }
+    }, [q])
 
     const onSearchSubmit = (e) => {
         e.preventDefault()

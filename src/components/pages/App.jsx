@@ -14,7 +14,8 @@ export const App = () => {
   if (code) {
     (async () => {
       try {
-        const accessToken = await SpotifyService.getAccessToken(clientId, code);
+        await localStorage.setItem('code', code)
+        const accessToken = await SpotifyService.getAccessToken(clientId);
         localStorage.setItem('accessToken', accessToken)
         dispatch( token_thunks(accessToken) )
       } catch (error) {

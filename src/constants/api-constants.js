@@ -7,3 +7,4 @@ export const getArtists = url + '/artists';
 export const getSearch = url + '/search?q=';
 export const getAlbums = url + '/browse/new-releases';
 export const getFeaturedPlaylists = url + '/browse/featured-playlists';
+export const getPlayListById = url + '/playlists';
