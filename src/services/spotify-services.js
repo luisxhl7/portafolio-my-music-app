@@ -26,8 +26,10 @@ class SpotifyService {
         body: tokenParams,
       });
       
-      const { access_token } = await result.json();
-      return access_token;
+      const infoToken = await result.json();
+      
+      return infoToken;
+
     } catch (error) {
       console.error("Error al obtener el token de acceso:", error);
       // Maneja el error de manera adecuada, por ejemplo, mostrando un mensaje al usuario.
