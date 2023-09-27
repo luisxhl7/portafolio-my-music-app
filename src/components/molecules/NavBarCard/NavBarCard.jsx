@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from '../../atoms/image'
 import fondoGrey from '../../../assets/images/fondo-gris.png'
+import { Link } from 'react-router-dom';
 import './NavBarCard.scss'
 
 export const NavBarCard = ({image, title, description, id, category, closeNavBar, load}) => {
@@ -9,13 +10,13 @@ export const NavBarCard = ({image, title, description, id, category, closeNavBar
         console.log(id)
     }
 
-
   return (
     <li 
         className='NavBarCard'
         onClick={handleGetContent}
         title={title}
     >
+      <Link to={!load && `/playlist/${ id }`}>
         <Image
             className={`--image-NavBarCard ${description === 'artist' && '--radius-image'}`}
             src={image ? image : fondoGrey}
@@ -32,6 +33,8 @@ export const NavBarCard = ({image, title, description, id, category, closeNavBar
                 </p>
             </div>
         }
+
+      </Link>
     </li>
   )
 }

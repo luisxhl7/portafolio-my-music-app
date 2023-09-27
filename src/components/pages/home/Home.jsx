@@ -39,6 +39,7 @@ export const Home = () => {
             title={item?.name}
             description={item?.description}
             load={loadFeaturedPlaylists}
+            link={'playlist'}
           />
         ))      
       }
@@ -61,6 +62,7 @@ export const Home = () => {
               image={item?.images[0].url}
               title={item?.name}
               description={item?.artists[0]?.name}
+              link={'album'}
             />
           ))
         }
@@ -83,6 +85,7 @@ export const Home = () => {
               image={item?.images[0].url}
               title={item?.name}
               description={item?.artists[0]?.name}
+              link={'album'}
             />
           ))
         }

@@ -28,23 +28,12 @@ useEffect(() => {
   
   // Agrega un event listener para observar cambios en el localStorage
   window.addEventListener('storage', handleLocalStorageChange);
-  console.log(miEstado)
 
   // Limpia el event listener cuando el componente se desmonta
   return () => {
     window.removeEventListener('storage', handleLocalStorageChange);
   };
 }, [localStorage.getItem('playTrack')]);
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className='player'>
