@@ -5,4 +5,154 @@
     height: 9vh;
     width: 100%;
     background-color: $color-black-1;
+    color: $color-white;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include FromMax(970px) {
+        grid-template-columns: 4fr;
+    }
+    &__content-left{
+        @include FromMax(970px) {
+            display: none;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        & .image-player{
+            background-color: $color-text-grey;
+            width: 60px;
+            height: 60px;
+            margin: 0px 10px;
+            border-radius: 5px;
+        }
+        & span{
+            & p{
+                color: $color-text-grey;
+                font-size: 0.6875rem;
+            }
+        }
+        & h3{
+            font-size: 0.875rem;
+        }
+    }
+    &__content-center{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        &__top{
+            display: flex;
+            align-items: center;
+            color: $color-text-grey;
+
+            & .--button-play{
+                color: $color-white;
+                font-size: 2.5em;
+                cursor: pointer;
+                margin: 0px 5px;
+            }
+            & .--button-skip{
+                transition: color 1s linear;
+                font-size: 2em; 
+                cursor: pointer;
+                &:hover{
+                    color: $color-white;
+                }
+            }
+            & .--button-repeat{
+                transition: color 1s linear;
+                cursor: pointer;
+                font-size: 1.2em; 
+                margin: 0px 5px;
+                &:hover{
+                    color: $color-white;
+                }
+            }
+            & .--button-shuffle{
+                transition: color 1s linear;
+                cursor: pointer;
+                font-size: 1.2em; 
+                margin: 0px 5px;
+                &:hover{
+                    color: $color-white;
+                }
+            }
+            
+        }
+        &__bottom{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -5px;
+            & .--slider{
+                width: 100%;
+                max-width: 625px;
+                color: $color-green;
+                & .css-14pt78w-MuiSlider-rail{
+                    color: $color-white;
+                }
+                & .css-1gv0vcd-MuiSlider-track{
+                    color: $color-white;
+                }
+                & .css-eg0mwd-MuiSlider-thumb{
+                    width: 0px;
+                    height: 0px;
+                }
+                &:hover{
+                    & .css-1gv0vcd-MuiSlider-track{
+                        color: $color-green;
+                    }
+                    & .css-eg0mwd-MuiSlider-thumb{
+                        width: 10px;
+                        height: 10px;
+                        color: $color-white;
+                    }
+                }
+            }
+            &__time{
+                margin: 0px 15px 0px 15px;
+            }
+        }
+    }
+    &__content-rigth{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include FromMax(970px) {
+            display: none;
+        }
+        & .--volume{
+            color: $color-text-grey;
+            margin: 0px 0px 0px 5px;
+        }
+        & .--queue{
+            color: $color-text-grey;
+        }
+        & .--slider{
+            width: 100%;
+            max-width: 100px;
+            color: $color-green;
+            & .css-14pt78w-MuiSlider-rail{
+                color: $color-white;
+            }
+            & .css-1gv0vcd-MuiSlider-track{
+                color: $color-white;
+            }
+            & .css-eg0mwd-MuiSlider-thumb{
+                width: 0px;
+                height: 0px;
+            }
+            &:hover{
+                & .css-1gv0vcd-MuiSlider-track{
+                    color: $color-green;
+                }
+                & .css-eg0mwd-MuiSlider-thumb{
+                    width: 10px;
+                    height: 10px;
+                    color: $color-white;
+                }
+            }
+        }
+    }
 }

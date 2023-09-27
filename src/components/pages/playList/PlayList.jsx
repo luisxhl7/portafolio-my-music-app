@@ -6,8 +6,10 @@ import './PlayList.scss'
 import { Image } from '../../atoms/image'
 import { useParams } from 'react-router-dom'
 import { CardPlaylist } from '../../molecules/CardPlaylist/CardPlaylist'
+import { AccessTime } from '@mui/icons-material';
 
 export const PlayList = () => {
+
   const dispatch = useDispatch();
   const {playlist, playlistLoad} = useSelector( (state) => state.playlistById);
   const {id} = useParams()
@@ -15,7 +17,6 @@ export const PlayList = () => {
   useEffect(() => {
     dispatch(getPlaylistById_thunks(id))
   }, [id])
-  
 
 
   return (
@@ -30,18 +31,43 @@ export const PlayList = () => {
             alt={playlist?.name}
             className='--image-playlist'
           />
-          <div>
-            <span>{playlist?.name}</span>
+          <div className='playlist__descriptions'>
+            <span>{playlist?.type}</span>
             <h1>{playlist?.name}</h1>
-            <p>{playlist?.name}</p>
+            <p>{playlist?.description}</p>
             <div>
               {playlist?.type}
-              <br />
               {playlist?.tracks?.total} canciones
             </div>
           </div>
         </div>
+
+
+
         <div className='playlist__list'>
+          <div className='playlist__list__description'>
+            <div className='playlist__list__description__number'>
+              <span>
+                #
+              </span>
+            </div>
+            <div className='playlist__list__description__title'>
+              <span>
+                Título
+              </span>
+            </div>
+            <div></div>
+            <div className='playlist__list__description__album'>
+              <span>
+                Álbum
+              </span>
+            </div>
+            <div></div>
+            <div className='playlist__list__description__time'>
+              <AccessTime/>
+            </div>
+
+          </div>
           {playlist?.tracks?.items.map( (item, idx) => (
             <CardPlaylist
               key={item?.track?.id}

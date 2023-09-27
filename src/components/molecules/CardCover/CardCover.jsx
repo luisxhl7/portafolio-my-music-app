@@ -9,6 +9,7 @@ export const CardCover = ({id, image, title, description, load}) => {
   return (
     <div className={`cardCover ${load ? '--load' :''}`} title={title}>
       <Link to={!load && `/playlist/${ id }`}> 
+      
         <div className='cardCover__content-image'>
           <Image
             src={image ? image : fondoGrey}
@@ -18,6 +19,7 @@ export const CardCover = ({id, image, title, description, load}) => {
           />
           {!load && <PlayCircle/>}
         </div>
+
         <div>
           <p className={`cardCover__title ${load ? '--load' :''}`}>
             {title}
@@ -26,6 +28,7 @@ export const CardCover = ({id, image, title, description, load}) => {
             {description}
           </p>
         </div>
+      
       </Link>
     </div>
   )

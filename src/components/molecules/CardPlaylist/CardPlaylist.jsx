@@ -5,8 +5,20 @@ import { PlayArrow, FavoriteBorderOutlined } from '@mui/icons-material';
 
 export const CardPlaylist = ({ position, image, musicName, artistName, albumName, duration_ms}) => {
     const timeDuration = minutesConverter(duration_ms)
+
+    const track = {
+        image,
+        musicName,
+        artistName,
+        timeDuration
+    }
+
+    const handlePlayTrack = () => {
+        localStorage.setItem('playTrack',JSON.stringify(track))
+    }
+
   return (
-    <div className='cardPlaylist'>
+    <div className='cardPlaylist' onClick={handlePlayTrack}>
         <div className='cardPlaylist__content-position'>
             <span>
                 {1 + position}
