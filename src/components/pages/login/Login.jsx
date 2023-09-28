@@ -1,10 +1,10 @@
 import React from 'react'
-import './login.scss'
-import { Button } from '../../atoms/button/Button'
-import { Image } from '../../atoms/image/Image'
-import images from '../../../assets/images'
-import { redirectToAuthCodeFlow } from '../../../services/login'
 import { clientId } from '../../../constants/variables'
+import { redirectToAuthCodeFlow } from '../../../services/login'
+import { Button } from '../../atoms/button'
+import { Image } from '../../atoms/image'
+import images from '../../../assets/images'
+import './login.scss'
 
 export const Login = () => {
   const handleLogin = () => {

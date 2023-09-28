@@ -1,7 +1,7 @@
 import React from 'react'
 import './images.scss'
 
-export const Image = ({src, alt, title, className}) => {
+export const Image = ({ src, alt, title, className }) => {
     return (
         <figure>
             <img

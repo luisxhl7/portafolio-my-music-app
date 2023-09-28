@@ -1,20 +1,20 @@
 import React from 'react'
 import './Input.scss'
 
-export const Input = ({type, name, id, placeholder, value, onChange, autoComplete, icon}) => {
+export const Input = ({ type, name, id, placeholder, value, onChange, autoComplete, icon }) => {
   return (
     <div className='input'>
-        {icon}
-        <input 
-            type={type} 
-            name={name} 
-            id={id}
-            className='input__content'
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-            autoComplete={autoComplete}
-        />
+      { icon }
+      <input 
+        id           = { id }
+        type         = { type } 
+        name         = { name } 
+        value        = { value }
+        onChange     = { onChange }
+        className    = 'input__content'
+        placeholder  = { placeholder }
+        autoComplete = { autoComplete }
+      />
     </div>
   )
 }

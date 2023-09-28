@@ -1,11 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import {PlayCircle} from '@mui/icons-material'
 import { Image } from '../../atoms/image'
-import {PlayCircle} from '@mui/icons-material';
 import fondoGrey from '../../../assets/images/fondo-gris.png'
-import { Link } from 'react-router-dom';
 import './CardCover.scss'
 
-export const CardCover = ({id, image, title, description, load, link}) => {
+export const CardCover = ({ id, image, title, description, load, link }) => {
   return (
     <div className={`cardCover ${load ? '--load' :''}`} title={title}>
       <Link to={!load && `/${link}/${ id }`}> 

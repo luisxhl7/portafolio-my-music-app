@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { useForm } from '../../../hooks/useForm';
-import queryString from 'query-string';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getSearch_thunks } from '../../../store/thunks/search-thunks';
 import { useDispatch, useSelector } from 'react-redux';
-import { CardCover } from '../../molecules/CardCover/CardCover';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Search } from '@mui/icons-material';
+import queryString from 'query-string';
+import { useForm } from '../../../hooks/useForm';
+import { getSearch_thunks } from '../../../store/thunks/search-thunks';
+import { CardCover } from '../../molecules/CardCover';
 import { Input } from '../../atoms/Input';
 import './SearchPage.scss'
 
@@ -14,10 +14,9 @@ export const SearchPage = () => {
     const dispatch = useDispatch()
     const location = useLocation();
     const {search, searchLoad} = useSelector( (state) => state.search);
-
+    
     const { q = '' } = queryString.parse( location.search);
-    const numeroAleatorio = Math.floor(Math.random() * 26);
-    const letraAleatoria = String.fromCharCode(97 + numeroAleatorio);
+    
     
     const { searchText, onInputChange } = useForm({
         searchText: ''
@@ -28,9 +27,11 @@ export const SearchPage = () => {
             navigate(`?q=${ searchText.toLowerCase().trim() }`)
             dispatch(getSearch_thunks(searchText))
         }else{
+            const numeroAleatorio = Math.floor(Math.random() * 26);
+            const letraAleatoria = String.fromCharCode(97 + numeroAleatorio);
             dispatch(getSearch_thunks(letraAleatoria))
         }
-    }, [q])
+    }, [q, dispatch, navigate, searchText])
 
     const onSearchSubmit = (e) => {
         e.preventDefault()
@@ -68,6 +69,7 @@ export const SearchPage = () => {
                             image={item?.images[0]?.url}
                             title={item?.name}
                             description={item?.type}
+                            link={'playlist'}
                         />
 
                     ))

@@ -8,6 +8,7 @@ import albumsReducer from './slice/AlbumsSlisce'
 import featuredPlaylistsReducer from './slice/FeaturedPlaylistsSlice'
 import searchReducer from './slice/SearchSlice'
 import playlistByIdReducer from './slice/PlaylistByIdSlice'
+import albumByIdReducer from './slice/AlbumByIdSlice'
 
 export default configureStore({
     reducer: {
@@ -20,5 +21,6 @@ export default configureStore({
         featuredPlaylists: featuredPlaylistsReducer,
         search: searchReducer,
         playlistById: playlistByIdReducer,
+        albumById: albumByIdReducer,
     }
 })

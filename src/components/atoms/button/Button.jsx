@@ -1,14 +1,13 @@
 import React from 'react'
 import'./button.scss'
 
-export const Button = ({children, className, onClick}) => {
-    
+export const Button = ({ children, className, onClick }) => { 
     return (
         <button 
-            className={`button ${className}`}
-            onClick={onClick}
+            onClick   = { onClick }
+            className = { `button ${className}` }
         >
-            {children}
+            { children }
         </button>
     )
 }

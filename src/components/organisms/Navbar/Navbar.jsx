@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { NavBarChoise } from '../../molecules/NavBarChoise/NavBarChoise';
-import { Home, Search, LibraryMusicOutlined } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
-import { getAlbumsSaved_thunks } from '../../../store/thunks/albums-saved-thunks';
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Home, Search, LibraryMusicOutlined } from '@mui/icons-material'
+import { getPlaylistsSaved_thunks } from '../../../store/thunks/playlist-saved-thunks'
+import { getAlbumsSaved_thunks } from '../../../store/thunks/albums-saved-thunks'
+import { getArtists_thunks } from '../../../store/thunks/artists-thunks'
+import { NavBarCard } from '../../molecules/NavBarCard'
+import { NavBarChoise } from '../../molecules/NavBarChoise'
+import { Button } from '../../atoms/button'
 import './Navbar.scss'
-import { NavBarCard } from '../../molecules/NavBarCard/NavBarCard';
-import { getPlaylistsSaved_thunks } from '../../../store/thunks/playlist-saved-thunks';
-import { Button } from '../../atoms/button';
-import { getArtists_thunks } from '../../../store/thunks/artists-thunks';
 
 export const Navbar = () => {
     const dispatch = useDispatch();
@@ -77,89 +77,87 @@ export const Navbar = () => {
                     </div>
                 }
 
-                <ul>
-                    <div className={`navbar__content-library ${ closeNavBar ? '--closeNavBar' : '' }`}>
-                        {
-                            (filterCategory === 'x' || filterCategory === 'Albumes') && 
-                            <>
-                                {loadAlbumSaved ?
-                                    Array.from({ length: 5 }, (_, index) => (
-                                        <NavBarCard
-                                            key={index}
-                                            closeNavBar={closeNavBar}
-                                            load={loadAlbumSaved}
-                                        />
-                                    ))
-                                    :
-                                    albumsSaved?.items?.map( item => (
-                                        <NavBarCard 
-                                            key={item.album.id} 
-                                            id={item.album.id}
-                                            image={item.album.images[2].url}
-                                            title={item.album.name}
-                                            category={item.album.type}
-                                            description={item.album.artists[0].name}
-                                            closeNavBar={closeNavBar}
-                                        />
-                                    ))
-                                }
-                            </> 
-                        }
-                        {
-                            (filterCategory === 'x' || filterCategory === 'Playlists') && 
-                            
-                            <>
-                                {loadAlbumSaved ?
-                                    Array.from({ length: 5 }, (_, index) => (
-                                        <NavBarCard
-                                            key={index}
-                                            closeNavBar={closeNavBar}
-                                            load={loadAlbumSaved}
-                                        />
-                                    ))
-                                    :
-                                    playlistSaved?.items?.map( item => (
-                                        <NavBarCard 
-                                            key={item?.id} 
-                                            id={item?.id}
-                                            image={item?.images[0]?.url}
-                                            title={item?.name}
-                                            category={item?.type}
-                                            description={item?.owner?.display_name}
-                                            closeNavBar={closeNavBar}
-                                        />
-                                    ))
-                                }
-                            </>
-                        }
-                        {
-                            (filterCategory === 'x' || filterCategory === 'Artistas') && 
-                            
-                            <>
-                                {loadAlbumSaved ?
-                                    Array.from({ length: 5 }, (_, index) => (
-                                        <NavBarCard
-                                            key={index}
-                                            closeNavBar={closeNavBar}
-                                            load={loadAlbumSaved}
-                                        />
-                                    ))
-                                    :
-                                    artists?.map( item => (
-                                        <NavBarCard 
-                                            key={item?.id} 
-                                            id={item?.id}
-                                            image={item?.images[0]?.url}
-                                            title={item?.name}
-                                            category={item.type}
-                                            description={false}
-                                            closeNavBar={closeNavBar}
-                                        />
-                                    ))
-                                }
-                            </>
-                        }
-                    </div>
+                <ul className={`navbar__content-library ${ closeNavBar ? '--closeNavBar' : '' }`}>
+                    {
+                        (filterCategory === 'x' || filterCategory === 'Albumes') && 
+                        <>
+                            {loadAlbumSaved ?
+                                Array.from({ length: 5 }, (_, index) => (
+                                    <NavBarCard
+                                        key={index}
+                                        closeNavBar={closeNavBar}
+                                        load={loadAlbumSaved}
+                                    />
+                                ))
+                                :
+                                albumsSaved?.items?.map( item => (
+                                    <NavBarCard 
+                                        key={item.album.id} 
+                                        id={item.album.id}
+                                        image={item.album.images[2].url}
+                                        title={item.album.name}
+                                        category={item.album.type}
+                                        description={item.album.artists[0].name}
+                                        closeNavBar={closeNavBar}
+                                    />
+                                ))
+                            }
+                        </> 
+                    }
+                    {
+                        (filterCategory === 'x' || filterCategory === 'Playlists') && 
+                        
+                        <>
+                            {loadAlbumSaved ?
+                                Array.from({ length: 5 }, (_, index) => (
+                                    <NavBarCard
+                                        key={index}
+                                        closeNavBar={closeNavBar}
+                                        load={loadAlbumSaved}
+                                    />
+                                ))
+                                :
+                                playlistSaved?.items?.map( item => (
+                                    <NavBarCard 
+                                        key={item?.id} 
+                                        id={item?.id}
+                                        image={item?.images[0]?.url}
+                                        title={item?.name}
+                                        category={item?.type}
+                                        description={item?.owner?.display_name}
+                                        closeNavBar={closeNavBar}
+                                    />
+                                ))
+                            }
+                        </>
+                    }
+                    {
+                        (filterCategory === 'x' || filterCategory === 'Artistas') && 
+                        
+                        <>
+                            {loadAlbumSaved ?
+                                Array.from({ length: 5 }, (_, index) => (
+                                    <NavBarCard
+                                        key={index}
+                                        closeNavBar={closeNavBar}
+                                        load={loadAlbumSaved}
+                                    />
+                                ))
+                                :
+                                artists?.map( item => (
+                                    <NavBarCard 
+                                        key={item?.id} 
+                                        id={item?.id}
+                                        image={item?.images[0]?.url}
+                                        title={item?.name}
+                                        category={item.type}
+                                        description={false}
+                                        closeNavBar={closeNavBar}
+                                    />
+                                ))
+                            }
+                        </>
+                    }
                 </ul>
 
             </div>

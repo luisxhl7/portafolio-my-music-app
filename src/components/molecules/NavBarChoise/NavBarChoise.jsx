@@ -1,6 +1,6 @@
 import React from 'react'
-import './NavBarChoise.scss'
 import { NavLink } from 'react-router-dom'
+import './NavBarChoise.scss'
 
 export const NavBarChoise = ({title, Icon, link, className, onclick, closeNavBar}) => {
   return (

@@ -1,9 +1,9 @@
 @import '../../../style/mixins.scss';
 @import '../../../style/variables.scss';
 
-.cardPlaylist{
+.cardAlbum{
     display: grid;
-    grid-template-columns: 0.2fr 0.3fr 4fr 3fr 2fr 1fr;   
+    grid-template-columns: 0.2fr  4fr 3fr 2fr 1fr;   
     grid-template-rows: 56px;
     transition-duration: .2s;
     transition-property: background-color, color;
@@ -14,16 +14,9 @@
         align-items: center;
         justify-content: flex-end;
         color: $color-text-grey;
-        min-width: 0px;
         & svg{
             display: none;
         }
-    }
-    &__content-image{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0px 15px;
     }
     &__content-description{
         display: flex;
@@ -31,15 +24,7 @@
         flex-direction: column;
         justify-content: center;
         color: $color-text-grey;
-        max-width: calc(556px - 5px);
-        padding: 0px 5px 0px 0px;
-        overflow: hidden;
-        span{
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+        margin: 0px 10px;
     }
     &__content-album{
         display: flex;
@@ -47,14 +32,6 @@
         flex-direction: column;
         justify-content: center;
         color: $color-text-grey;
-        max-width: 433px;
-        overflow: hidden;
-        span{
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
     }
     &__content-button-like{
         display: flex;
@@ -83,7 +60,7 @@
         & span{
             color: $color-white;
         }
-        & .cardPlaylist__content-position{
+        & .cardAlbum__content-position{
             & span{
                 display: none;
             }
@@ -92,7 +69,7 @@
                 display: block;
             }
         }
-        & .cardPlaylist__button-like{
+        & .cardAlbum__button-like{
             display: block;
         }
     }

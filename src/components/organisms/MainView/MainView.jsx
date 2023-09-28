@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { getUser_thunks } from '../../../store/thunks/user-thunks';
-import { Image } from '../../atoms/image';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useDispatch, useSelector } from 'react-redux'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+import { getUser_thunks } from '../../../store/thunks/user-thunks'
 import fondoGrey from '../../../assets/images/fondo-gris.png'
+import { Image } from '../../atoms/image'
 import './MainView.scss'
 
 export const MainView = () => {
   const dispatch = useDispatch()
-  const {user, load} = useSelector((state) => state.user);
   const [scrolled, setScrolled] = useState(false);
+  const {user, load} = useSelector((state) => state.user);
 
   useEffect(() => {
     dispatch( getUser_thunks() )
@@ -32,8 +32,8 @@ export const MainView = () => {
       scrollableContainer.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const mainViewClass = scrolled ? 'MainView scrolled' : 'MainView';
 
+  const mainViewClass = scrolled ? 'MainView scrolled' : 'MainView';
 
   return (
     <header className={mainViewClass}>

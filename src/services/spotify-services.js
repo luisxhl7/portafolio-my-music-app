@@ -60,10 +60,25 @@ class SpotifyService {
   static getSearch = async (search) => {
     return axios.get(`${endPoints.getSearch}${search}&type=playlist`);
   }
+
   static getPlayListById = async (id) => {
     return axios.get(`${endPoints.getPlayListById}/${id}`);
   }
-  getPlayListById
+
+  static getAlbumById = async (id) => {
+    return axios.get(`${endPoints.getAlbumById}/${id}`);
+  }
+
+  static checkSavedTrack = async (id) => {
+    return axios.get(`${endPoints.checkSavedTrack}${id}`);
+  }
+  static savedTrack = async (id) => {
+    return axios.put(`${endPoints.savedTrack}${id}`);
+  }
+  static deletedTrack = async (id) => {
+    return axios.delete(`${endPoints.deletedTrack}${id}`);
+  }
+  
 }
 
 export default SpotifyService;
