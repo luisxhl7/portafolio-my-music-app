@@ -20,6 +20,9 @@
         &:hover{
             color: $color-white;
         }
+        &.--active{
+            color: $color-white;
+        }
     }
     &__text{
         margin-left: 22px;

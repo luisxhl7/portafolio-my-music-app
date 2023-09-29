@@ -11,7 +11,7 @@ export const Album = () => {
   const dispatch = useDispatch();
   const {album, albumLoad} = useSelector( (state) => state.albumById);
   const {id} = useParams()
-  console.log(album)
+
   useEffect(() => {
     dispatch(getAlbumById_thunks(id))
   }, [dispatch, id])

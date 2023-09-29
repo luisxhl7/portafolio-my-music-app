@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Image } from '../../atoms/image'
 import fondoGrey from '../../../assets/images/fondo-gris.png'
 import './NavBarCard.scss'
+import { NavLink } from 'react-router-dom'
 
 export const NavBarCard = ({ image, title, description, id, category, closeNavBar, load }) => {
 
@@ -11,7 +11,10 @@ export const NavBarCard = ({ image, title, description, id, category, closeNavBa
       className='NavBarCard'
       title={title}
     >
-      <Link to={!load && `/playlist/${ id }`}>
+      <NavLink
+        to={!load && `/playlist/${ id }`}
+        className={({isActive}) => `NavBarCard__link ${isActive ? '--active' : ''}`}
+      >
         <Image
           className={`--image-NavBarCard ${description === 'artist' && '--radius-image'}`}
           src={image ? image : fondoGrey}
@@ -28,7 +31,7 @@ export const NavBarCard = ({ image, title, description, id, category, closeNavBa
             </p>
           </div>
         }
-      </Link>
+      </NavLink>
     </li>
   )
 }

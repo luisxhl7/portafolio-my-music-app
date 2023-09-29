@@ -2,16 +2,22 @@
 @import '../../../style/variables.scss';
 
 .NavBarCard{
-    background-color: transparent;
     width: 100%;
     height: 65px;
     cursor: pointer;
     border-radius: 6px;
-    & a{
+    &__link{
+        background-color: transparent;
         height: 100%;
         width: 100%;
         display: flex;
         align-items: center;
+        &:hover{
+            background-color: $color-grey;
+        }
+        &.--active{
+            background-color: $color-grey;
+        }
     }
     &__title{
         color: $color-white;
@@ -40,9 +46,6 @@
             background-color: $color-grey-hover;
             width: 170px;
         }
-    }
-    &:hover{
-        background-color: $color-grey;
     }
     & .--image-NavBarCard{
         width: 48px;

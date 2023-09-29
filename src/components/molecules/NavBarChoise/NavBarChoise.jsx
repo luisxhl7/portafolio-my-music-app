@@ -8,7 +8,7 @@ export const NavBarChoise = ({title, Icon, link, className, onclick, closeNavBar
 
       <NavLink 
         to={link && link} 
-        className={`NavBarChoise__description ${className ? className : ''}`}
+        className={({isActive}) => `NavBarChoise__description ${className ? className : ''} ${isActive ? '--active' : ''}`}
         onClick={onclick}
       >
         {Icon}
