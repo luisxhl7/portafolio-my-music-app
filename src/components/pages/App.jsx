@@ -19,6 +19,7 @@ export const App = () => {
         localStorage.setItem('accessToken', access_token)
         localStorage.setItem('refreshToken', refresh_token)
         dispatch( token_thunks(access_token) )
+        dispatch( (access_token) )
       } catch (error) {
         console.error("Error en el manejo principal:", error);
       }

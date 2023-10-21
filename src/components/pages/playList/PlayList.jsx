@@ -18,7 +18,6 @@ export const PlayList = () => {
     dispatch(getPlaylistById_thunks(id))
   }, [id, dispatch])
 
-
   return (
     <div className='playlist'>
       {playlistLoad ? 
@@ -44,8 +43,6 @@ export const PlayList = () => {
               </div>
             </div>
           </div>
-
-
 
           <div className='playlist__list'>
             <div className='playlist__list__description'>

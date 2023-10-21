@@ -12,16 +12,7 @@ export const getPlaylistById_thunks = (id) => {
             }, 1000);
             
         } catch (error) {
-            if (error.response && error.response.status === 401) {
-                await SpotifyService.getAccessToken();
-                setTimeout( async() => {
-                    const {data} = await SpotifyService.getPlayListById(id)
-                    dispatch( SET_PLAYLIST({playlist: data}) );
-                    
-                }, 1000);
-              } else {
-                console.error('Error en la solicitud:', error);
-            }
+            console.log(error)
         }
     }
 }

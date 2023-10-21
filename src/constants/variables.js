@@ -23,3 +23,4 @@ export const SCOPES = [
 ].join(' ');
 
 export const REDIRECT_URI = 'http://localhost:3000';
+// export const REDIRECT_URI = 'https://deu63jgjvax3a.cloudfront.net';

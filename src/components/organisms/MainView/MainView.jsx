@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import { getUser_thunks } from '../../../store/thunks/user-thunks'
 import fondoGrey from '../../../assets/images/fondo-gris.png'
@@ -10,11 +11,25 @@ export const MainView = () => {
   const dispatch = useDispatch()
   const [scrolled, setScrolled] = useState(false);
   const {user, load} = useSelector((state) => state.user);
+  const navigate = useNavigate()
+
+  const onLogout = async() => {
+    await localStorage.clear()
+    await navigate('/login', {
+      replace: true
+    })
+    window.location.reload()
+  }
+
+  const onNavigateBack = () => {
+    navigate(-1);
+  }
+
 
   useEffect(() => {
     dispatch( getUser_thunks() )
   }, [dispatch]);
-  
+
   useEffect(() => {
     const scrollableContainer = document.querySelector('.PageLoyaut__body-content');
 
@@ -38,9 +53,10 @@ export const MainView = () => {
   return (
     <header className={mainViewClass}>
       <div>
-        <span 
+        <span
           title='Volver'
-          className='MainView__icon-back' 
+          className='MainView__icon-back'
+          onClick={onNavigateBack}
         >
           <ArrowBackIosNewIcon/>
         </span>
@@ -50,6 +66,7 @@ export const MainView = () => {
         <Image 
           src={fondoGrey} 
           className={'--image-user'}
+          onClick={onLogout} 
         />
         :
         <Image 
@@ -57,6 +74,7 @@ export const MainView = () => {
           className={'--image-user'}
           alt={user?.display_name} 
           title={user?.display_name}
+          onClick={onLogout} 
         />
       }
     </header>
