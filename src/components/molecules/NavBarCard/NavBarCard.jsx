@@ -4,7 +4,7 @@ import fondoGrey from '../../../assets/images/fondo-gris.png'
 import './NavBarCard.scss'
 import { NavLink } from 'react-router-dom'
 
-export const NavBarCard = ({ image, title, description, id, category, closeNavBar, load }) => {
+export const NavBarCard = ({ image, title, description, id, category, closeNavBar, load, typeUrl }) => {
 
   return (
     <li 
@@ -12,7 +12,7 @@ export const NavBarCard = ({ image, title, description, id, category, closeNavBa
       title={title}
     >
       <NavLink
-        to={!load && `/playlist/${ id }`}
+        to={!load && `/${typeUrl}/${ id }`}
         className={({isActive}) => `NavBarCard__link ${isActive ? '--active' : ''}`}
       >
         <Image

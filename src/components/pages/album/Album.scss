@@ -7,10 +7,42 @@
     &__info{
         padding: 60px 20px 20px 20px;
         display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         & .--image-playlist{
-            width: 100%;
-            max-width: 190px;
+            width: 190px;
             box-shadow: 0 4px 60px $color-black-1;
+        }
+        &__descriptions{
+            padding: 0px 0px 10px 20px;
+            overflow: hidden;
+            & span{
+                font-size: 0.875rem;
+                color: $color-white;
+            }
+            & h1{
+                font-size: 6rem;
+                color: $color-white;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            & p{
+                color: $color-text-grey;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            & div{
+                color: $color-white; 
+                display: flex;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
     &__list{
@@ -42,28 +74,6 @@
                 justify-content: center;
                 color: #b3b3b3;
             }
-        }
-    }
-    &__descriptions{
-        padding: 0px 0px 10px 20px;
-        & span{
-            font-size: 0.875rem;
-            color: $color-white;
-        }
-        & h1{
-            font-size: 6rem;
-            color: $color-white;
-            max-width: 550px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        & p{
-            color: $color-text-grey;
-        }
-        & div{
-            color: $color-white; 
-            display: flex;
         }
     }
 }

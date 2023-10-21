@@ -42,10 +42,11 @@ export const SearchPage = () => {
 
     return (
         <div className='search'>
-            <form onSubmit={ onSearchSubmit}>
+            <form className='search__form' onSubmit={ onSearchSubmit}>
                 <Input
                     type="text"
                     placeholder='¿Qué quieres escuchar?'
+                    className={'search__input'}
                     name='searchText'
                     autoComplete='off'
                     value={searchText}

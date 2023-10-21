@@ -4,18 +4,25 @@
 .home{
     
     &__title-section{
+        text-align: center;
         font-size: 1.5rem;
         font-weight: 700;
         color: $color-white;
         margin: 10px 0px 10px 20px;
         width: 100%;
+        @include FromMin($x-large) {
+        text-align: left;
+        }
     }
     &__content-cards{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
         align-items: center;
         padding: 0px 10px;
+        @include FromMin($x-large) {
+            justify-content: flex-start;
+        }
     }
 }

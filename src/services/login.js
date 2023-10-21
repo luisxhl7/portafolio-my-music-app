@@ -7,7 +7,7 @@ export const redirectToAuthCodeFlow = async (clientId) => {
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
 
-    localStorage.setItem("verifier", verifier);
+    sessionStorage.setItem("verifier", verifier);
 
     const authParams = new URLSearchParams();
     authParams.append("client_id", clientId);

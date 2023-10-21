@@ -7,11 +7,11 @@ import { Album } from '../components/pages/album'
 export const PrivateRoutes = () => {
   useEffect(() => {
     const refreshPage = () => {
-      localStorage.clear()
+      sessionStorage.clear()
       window.location.reload();
     };
 
-    const oneHour =  1 * 60 * 1000; // 1 hora en milisegundos
+    const oneHour =  59 * 60 * 1000; // 1 hora en milisegundos
 
     const intervalId = setTimeout(refreshPage, oneHour);
 

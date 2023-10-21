@@ -10,24 +10,25 @@ import {
   PlayCircle
 } from '@mui/icons-material';
 import { Image } from '../../atoms/image'
+import soundImage from '../../../assets/images/sound-image.jfif'
 import './Player.scss'
 
 
 export const Player = () => {
 
-  const [miEstado, setMiEstado] = useState(JSON.parse(localStorage.getItem(('playTrack'))));
+  const [miEstado, setMiEstado] = useState(JSON.parse(sessionStorage.getItem(('playTrack'))));
 
   useEffect(() => {
-    const handleLocalStorageChange = (e) => {
+    const handlesessionStorageChange = (e) => {
       if (e.key === 'playTrack') {
         setMiEstado(e.newValue);
       }
     };
     
-    window.addEventListener('storage', handleLocalStorageChange);
+    window.addEventListener('storage', handlesessionStorageChange);
 
     return () => {
-      window.removeEventListener('storage', handleLocalStorageChange);
+      window.removeEventListener('storage', handlesessionStorageChange);
     };
   }, []);
 
@@ -36,7 +37,7 @@ export const Player = () => {
       
       <div className='player__content-left'>
         <Image 
-          src={miEstado?.image}
+          src={miEstado?.image ? miEstado?.image : soundImage}
           className='image-player'
         />
         <div>

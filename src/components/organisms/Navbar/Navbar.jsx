@@ -16,11 +16,11 @@ export const Navbar = () => {
     const {playlistSaved} = useSelector((state) => state.playlistsSaved);
     const {artists} = useSelector((state) => state.artists);
 
-    const [filterCategory, setFilterCategory] = useState(localStorage.getItem('filterCategory'))
-    const [closeNavBar, setCloseNavBar] = useState(JSON.parse(localStorage.getItem('closeNavBar')))
+    const [filterCategory, setFilterCategory] = useState(sessionStorage.getItem('filterCategory'))
+    const [closeNavBar, setCloseNavBar] = useState(JSON.parse(sessionStorage.getItem('closeNavBar')))
     
-    !filterCategory ? setFilterCategory('x') : localStorage.setItem('filterCategory', filterCategory);
-    localStorage.setItem('closeNavBar', closeNavBar)
+    !filterCategory ? setFilterCategory('x') : sessionStorage.setItem('filterCategory', filterCategory);
+    sessionStorage.setItem('closeNavBar', closeNavBar)
 
     useEffect(() => {
         dispatch( getAlbumsSaved_thunks() );
@@ -99,6 +99,7 @@ export const Navbar = () => {
                                         category={item.album.type}
                                         description={item.album.artists[0].name}
                                         closeNavBar={closeNavBar}
+                                        typeUrl={'album'}
                                     />
                                 ))
                             }
@@ -126,6 +127,7 @@ export const Navbar = () => {
                                         category={item?.type}
                                         description={item?.owner?.display_name}
                                         closeNavBar={closeNavBar}
+                                        typeUrl={'playlist'}
                                     />
                                 ))
                             }

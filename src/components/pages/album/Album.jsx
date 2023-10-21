@@ -29,7 +29,7 @@ export const Album = () => {
               alt={album?.name}
               className='--image-playlist'
             />
-            <div className='album__descriptions'>
+            <div className='album__info__descriptions'>
               <span>{album?.type}</span>
               <h1>{album?.name}</h1>
               <p>{album?.description}</p>

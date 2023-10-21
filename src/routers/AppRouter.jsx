@@ -9,7 +9,7 @@ export const AppRouter = () => {
   
   return (
     <Routes>
-      {localStorage.getItem('accessToken') ?
+      {sessionStorage.getItem('accessToken') ?
         <Route path = '/*' element = { <PrivateRoutes/> }/>
       :
         <>

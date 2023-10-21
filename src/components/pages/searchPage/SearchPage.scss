@@ -1,7 +1,21 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
 .search{
     &__content{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         flex-wrap: wrap;
+        @include FromMin($x-large) {
+            justify-content: flex-start;
+        }
+    }
+    &__form{
+        display: flex;
+        justify-content: center;
+        @include FromMin($x-large) {
+            justify-content: flex-start;
+        }
     }
 }

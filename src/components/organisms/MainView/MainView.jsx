@@ -14,7 +14,7 @@ export const MainView = () => {
   const navigate = useNavigate()
 
   const onLogout = async() => {
-    await localStorage.clear()
+    await sessionStorage.clear()
     await navigate('/login', {
       replace: true
     })

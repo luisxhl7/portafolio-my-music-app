@@ -11,12 +11,12 @@ class SpotifyService {
   
   static getAccessToken = async (clientId) => {
     try {
-      const verifier = localStorage.getItem("verifier");
+      const verifier = sessionStorage.getItem("verifier");
   
       const tokenParams = new URLSearchParams();
       tokenParams.append("client_id", clientId);
       tokenParams.append("grant_type", "authorization_code");
-      tokenParams.append("code", localStorage.getItem('code'));
+      tokenParams.append("code", sessionStorage.getItem('code'));
       tokenParams.append("redirect_uri", REDIRECT_URI);
       tokenParams.append("code_verifier", verifier);
   

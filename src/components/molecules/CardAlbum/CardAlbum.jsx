@@ -20,7 +20,7 @@ export const CardAlbum = ({ position, image, musicName, artistName, albumName, d
     }
 
     const handlePlayTrack = () => {
-        localStorage.setItem('playTrack',JSON.stringify(track))
+        sessionStorage.setItem('playTrack',JSON.stringify(track))
     }
 
     const handleSavedTrack = async(id) => {
