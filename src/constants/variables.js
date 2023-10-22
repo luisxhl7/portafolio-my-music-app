@@ -23,7 +23,5 @@ export const SCOPES = [
     'user-read-email',
 ].join(' ');
 
-export const REDIRECT_URI = 'http://localhost:3000';
-// export const REDIRECT_URI = 'https://deu63jgjvax3a.cloudfront.net';
-// export const REDIRECT_URI = 'http://portafolio-my-music-app.s3-website-us-east-1.amazonaws.com';
-// export const REDIRECT_URI = 'https://main.d3mrsqa2j7ln2g.amplifyapp.com';
+// export const REDIRECT_URI = 'http://localhost:3000';
+export const REDIRECT_URI = 'https://main.d3mrsqa2j7ln2g.amplifyapp.com';
