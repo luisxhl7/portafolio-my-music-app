@@ -1,4 +1,5 @@
-export const clientId = "0b16851edebb4f46a3430cc9b66ebe2b";
+export const clientId = "62b04dbd3fbe421fadf727720bc43ff2";
+// export const clientId = "0b16851edebb4f46a3430cc9b66ebe2b";
 
 export const SCOPES = [
     'ugc-image-upload',
@@ -22,5 +23,7 @@ export const SCOPES = [
     'user-read-email',
 ].join(' ');
 
-export const REDIRECT_URI = 'http://localhost:3000';
+// export const REDIRECT_URI = 'http://localhost:3000';
 // export const REDIRECT_URI = 'https://deu63jgjvax3a.cloudfront.net';
+// export const REDIRECT_URI = 'http://portafolio-my-music-app.s3-website-us-east-1.amazonaws.com';
+export const REDIRECT_URI = 'https://main.d3mrsqa2j7ln2g.amplifyapp.com';

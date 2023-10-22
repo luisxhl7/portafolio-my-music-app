@@ -1,4 +1,4 @@
-import imageLogin from './imagen-spotify.png';
+import imageLogin from './logo-my-music-app.png';
 
 const images = {
     imageLogin

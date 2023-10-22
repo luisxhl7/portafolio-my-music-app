@@ -17,7 +17,7 @@ export const Navbar = () => {
     const {artists} = useSelector((state) => state.artists);
 
     const [filterCategory, setFilterCategory] = useState(sessionStorage.getItem('filterCategory'))
-    const [closeNavBar, setCloseNavBar] = useState(JSON.parse(sessionStorage.getItem('closeNavBar')))
+    const [closeNavBar, setCloseNavBar] = useState(window.innerWidth < 768 ? true : JSON.parse(sessionStorage.getItem('closeNavBar')))
     
     !filterCategory ? setFilterCategory('x') : sessionStorage.setItem('filterCategory', filterCategory);
     sessionStorage.setItem('closeNavBar', closeNavBar)

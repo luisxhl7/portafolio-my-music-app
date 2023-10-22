@@ -15,9 +15,26 @@
     }
     &__image{
         width: 100%;
-        max-width: 700px;
-        @include FromMin($x-large) {
-            max-width: 700px;
+        max-width: 600px;
+        background-color: transparent;
+        margin-bottom: -100px;
+        margin-top: -100px;
+        @include FromMax($small) {
+            width: 300px;
+            margin-bottom: -50px;
+            margin-top: -100px;
+        }
+    }
+    &__text{
+        color: $color-text-grey;
+        @include FromMax($small) {
+            font-size: 12px;
+        }
+        &.--text-1{
+            color: $color-white;
+        }
+        &.--copy{
+            cursor: pointer;
         }
     }
 }
