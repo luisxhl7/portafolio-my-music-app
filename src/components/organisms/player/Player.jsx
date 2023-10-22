@@ -10,7 +10,6 @@ import {
   PlayCircle
 } from '@mui/icons-material';
 import { Image } from '../../atoms/image'
-import images from '../../../assets/images/index'
 import './Player.scss'
 
 

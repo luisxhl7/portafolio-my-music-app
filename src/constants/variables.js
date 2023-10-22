@@ -23,5 +23,5 @@ export const SCOPES = [
     'user-read-email',
 ].join(' ');
 
-export const REDIRECT_URI = 'http://localhost:3000';
-// export const REDIRECT_URI = 'https://main.d3mrsqa2j7ln2g.amplifyapp.com';
+// export const REDIRECT_URI = 'http://localhost:3000';
+export const REDIRECT_URI = 'https://main.d3mrsqa2j7ln2g.amplifyapp.com';
