@@ -17,7 +17,6 @@ import './Player.scss'
 export const Player = () => {
 
   const [miEstado, setMiEstado] = useState(JSON.parse(sessionStorage.getItem(('playTrack'))));
-
   useEffect(() => {
     const handlesessionStorageChange = (e) => {
       if (e.key === 'playTrack') {
@@ -37,7 +36,7 @@ export const Player = () => {
       
       <div className='player__content-left'>
         <Image 
-          src={miEstado?.image ? miEstado?.image : images.soundImage}
+          src={miEstado ? miEstado?.image : images.soundImage}
           className='image-player'
         />
         <div>
