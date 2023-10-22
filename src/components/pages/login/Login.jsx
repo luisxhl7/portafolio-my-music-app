@@ -8,7 +8,7 @@ import './login.scss'
 import CopyToClipboard from 'react-copy-to-clipboard'
 
 export const Login = () => {
-  const [text, setText] = useState('pruebasmymusicapp@yopmail.com');
+  const [text] = useState('pruebasmymusicapp@yopmail.com');
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

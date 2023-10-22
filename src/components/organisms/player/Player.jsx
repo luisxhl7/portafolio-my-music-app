@@ -10,7 +10,7 @@ import {
   PlayCircle
 } from '@mui/icons-material';
 import { Image } from '../../atoms/image'
-import soundImage from '../../../assets/images/sound-image.jfif'
+import images from '../../../assets/images/index'
 import './Player.scss'
 
 
@@ -37,7 +37,7 @@ export const Player = () => {
       
       <div className='player__content-left'>
         <Image 
-          src={miEstado?.image ? miEstado?.image : soundImage}
+          src={miEstado?.image ? miEstado?.image : images.soundImage}
           className='image-player'
         />
         <div>
