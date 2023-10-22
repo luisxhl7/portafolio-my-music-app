@@ -17,12 +17,14 @@ import './Player.scss'
 export const Player = () => {
 
   const [miEstado, setMiEstado] = useState(JSON.parse(sessionStorage.getItem(('playTrack'))));
+
+  const handlesessionStorageChange = (e) => {
+    if (e.key === 'playTrack') {
+      setMiEstado(e.newValue);
+    }
+  };
+  
   useEffect(() => {
-    const handlesessionStorageChange = (e) => {
-      if (e.key === 'playTrack') {
-        setMiEstado(e.newValue);
-      }
-    };
     
     window.addEventListener('storage', handlesessionStorageChange);
 
@@ -35,10 +37,14 @@ export const Player = () => {
     <div className='player'>
       
       <div className='player__content-left'>
-        <Image 
-          src={miEstado ? miEstado?.image : images.soundImage}
-          className='image-player'
-        />
+        <div className='player__content-left__content-image'>
+          {miEstado &&
+            <Image 
+              src={miEstado?.image}
+              className='image-player'
+            />
+          }
+        </div>
         <div>
           <h3>{miEstado?.musicName}</h3>
           <span><p>{miEstado?.artistName}</p></span>

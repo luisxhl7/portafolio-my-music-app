@@ -18,11 +18,17 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        & .image-player{
-            background-color: $color-text-grey;
+        &__content-image{
             width: 60px;
             height: 60px;
+            background-image:  url(../../../assets/images/sound-image.webp);
+            background-repeat: no-repeat;
+            background-size: contain;
             margin: 0px 10px;
+        }
+        & .image-player{
+            width: 60px;
+            height: 60px;
             border-radius: 5px;
         }
         & span{
