@@ -11,16 +11,44 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        @include FromMax($medium) {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            margin: 0;
+            overflow: hidden;
+            text-align: start;
+            text-overflow: ellipsis;
+            white-space: unset;
+            word-break: break-word;
+        }
+        & figure{
+            @include FromMax($medium) {
+                width: 100%;
+            }
+        }
         & .--image-playlist{
             width: 190px;
             box-shadow: 0 4px 60px $color-black-1;
+            @include FromMax($medium) {
+                margin: auto;
+            }
         }
         &__descriptions{
             padding: 0px 0px 10px 20px;
             overflow: hidden;
+            width: 100%;
+            
+            @include FromMax($medium) {
+                padding: 0px 0px 10px 0px;
+            }
+
             & span{
                 font-size: 0.875rem;
                 color: $color-white;
+                @include FromMax($medium) {
+                    display: none;
+                }
             }
             & h1{
                 font-size: 6rem;
@@ -28,6 +56,19 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                @include FromMax($medium) {
+                    margin: 20px 0px;
+                    font-size: 2rem;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    margin: 0;
+                    overflow: hidden;
+                    text-align: start;
+                    text-overflow: ellipsis;
+                    white-space: unset;
+                    word-break: break-word;
+                }
             }
             & p{
                 color: $color-text-grey;
@@ -52,6 +93,9 @@
             grid-template-rows: 36px;
             border-bottom: 1px solid $color-text-grey;
             margin: 0px 0px 15px 0px;
+            @include FromMax($medium) {
+                grid-template-columns: 0.4fr 9.7fr 0.3fr;   
+            }
             &__number{
                 display: flex;
                 align-items: center;
@@ -72,6 +116,9 @@
                 flex-direction: column;
                 justify-content: center;
                 color: #b3b3b3;
+                @include FromMax($medium) {
+                    display: none;
+                }
             }
             &__time{
                 display: flex;
@@ -79,6 +126,9 @@
                 flex-direction: column;
                 justify-content: center;
                 color: #b3b3b3;
+                @include FromMax($medium) {
+                    display: none;
+                }
             }
         }
     }

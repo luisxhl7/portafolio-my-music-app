@@ -9,6 +9,9 @@
     transition-property: background-color, color;
     transition-timing-function: linear;
     cursor: default;
+    @include FromMax($medium) {
+        grid-template-columns: 0.5fr 0.3fr 10.7fr 0.3fr ;   
+    }
     &__content-position{
         display: flex;
         align-items: center;
@@ -55,6 +58,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        @include FromMax($medium) {
+            display: none;
+        }
     }
     &__content-button-like{
         display: flex;
@@ -72,6 +78,9 @@
         flex-direction: column;
         justify-content: center;
         color: $color-text-grey;
+        @include FromMax($medium) {
+            display: none;
+        }
     }
     &__button-like{
         background-color: transparent;

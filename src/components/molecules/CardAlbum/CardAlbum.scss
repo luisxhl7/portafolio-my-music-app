@@ -3,12 +3,15 @@
 
 .cardAlbum{
     display: grid;
-    grid-template-columns: 0.2fr  4fr 3fr 2fr 1fr;   
+    grid-template-columns: 0.2fr 8.7fr 0.3fr 1fr;   
     grid-template-rows: 56px;
     transition-duration: .2s;
     transition-property: background-color, color;
     transition-timing-function: linear;
     cursor: default;
+    @include FromMax($medium) {
+        grid-template-columns: 0.2fr 9.7fr 0.3fr ;   
+    }
     &__content-position{
         display: flex;
         align-items: center;
@@ -25,13 +28,15 @@
         justify-content: center;
         color: $color-text-grey;
         margin: 0px 10px;
-    }
-    &__content-album{
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        color: $color-text-grey;
+        max-width: calc(556px - 5px);
+        padding: 0px 5px 0px 0px;
+        overflow: hidden;
+        span{
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
     &__content-button-like{
         display: flex;
@@ -49,6 +54,9 @@
         flex-direction: column;
         justify-content: center;
         color: $color-text-grey;
+        @include FromMax($medium) {
+            display: none;
+        }
     }
     &__button-like{
         background-color: transparent;

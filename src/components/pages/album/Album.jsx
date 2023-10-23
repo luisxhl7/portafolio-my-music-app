@@ -53,8 +53,7 @@ export const Album = () => {
                 </span>
               </div>
               <div></div>
-              <div></div>
-              <div className='playlist__list__description__time'>
+              <div className='album__list__description__time'>
                 <AccessTime/>
               </div>
             </div>

@@ -72,25 +72,19 @@ export const CardAlbum = ({ position, image, musicName, artistName, albumName, d
                 </span>
             </div>
             
-            <div className='cardAlbum__content-album'>
-                <span>
-                    {albumName}
-                </span>
+            <div className='cardAlbum__content-button-like'>
+                <button 
+                    title='like'
+                    className={`cardAlbum__button-like ${isSaved ? '--actived' : ''}`}
+                    onClick={isSaved ? () => handleDeletedTrack(id) : () => handleSavedTrack(id) }
+                >
+                    {isSaved ?
+                        <Favorite/>
+                        :
+                        <FavoriteBorderOutlined/>
+                    }
+                </button>
             </div>
-            
-        <div className='cardAlbum__content-button-like'>
-            <button 
-                title='like'
-                className={`cardAlbum__button-like ${isSaved ? '--actived' : ''}`}
-                onClick={isSaved ? () => handleDeletedTrack(id) : () => handleSavedTrack(id) }
-            >
-                {isSaved ?
-                    <Favorite/>
-                    :
-                    <FavoriteBorderOutlined/>
-                }
-            </button>
-        </div>
             
             <div className='cardAlbum__content-duration'>
                 <span>
