@@ -132,11 +132,21 @@
             width: 0px !important;
             height: 0px !important;
         }
+        & .css-7drnjp {
+            width: 0px !important;
+            height: 0px !important;
+            color: $color-white !important;
+        }
         &:hover{
             & .css-1gv0vcd-MuiSlider-track{
                 color: $color-green !important;
             }
             & .css-eg0mwd-MuiSlider-thumb{
+                width: 10px !important;
+                height: 10px !important;
+                color: $color-white !important;
+            }
+            & .css-7drnjp {
                 width: 10px !important;
                 height: 10px !important;
                 color: $color-white !important;
