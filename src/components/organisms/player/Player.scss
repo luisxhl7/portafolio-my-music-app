@@ -95,36 +95,6 @@
                 width: 100%;
                 max-width: 625px;
                 color: $color-green;
-                & .css-14pt78w-MuiSlider-rail{
-                    color: $color-white;
-                }
-                & .css-1gv0vcd-MuiSlider-track{
-                    color: $color-white;
-                }
-                & .css-eg0mwd-MuiSlider-thumb{
-                    width: 0px;
-                    height: 0px;
-                }
-                & .css-7drnjp{
-                    width: 0px;
-                    height: 0px;
-                    color: $color-white;
-                }
-                &:hover{
-                    & .css-1gv0vcd-MuiSlider-track{
-                        color: $color-green;
-                    }
-                    & .css-eg0mwd-MuiSlider-thumb{
-                        width: 10px;
-                        height: 10px;
-                        color: $color-white;
-                    }
-                    & .css-7drnjp{
-                        width: 10px !important;
-                        height: 10px !important;
-                        color: $color-white !important;
-                    }
-                }
             }
             &__time{
                 margin: 0px 15px 0px 15px;
@@ -149,47 +119,28 @@
             width: 100%;
             max-width: 100px;
             color: $color-green;
-            & .css-14pt78w-MuiSlider-rail{
-                color: $color-white !important;
-            }
-            & .css-1gv0vcd-MuiSlider-track{
-                color: $color-white !important;
-            }
-            & .css-eg0mwd-MuiSlider-thumb{
-                width: 0px !important;
-                height: 0px !important;
-            }
-
-            &:hover{
-                & .css-1gv0vcd-MuiSlider-track{
-                    color: $color-green;
-                }
-                & .css-eg0mwd-MuiSlider-thumb{
-                    width: 10px;
-                    height: 10px;
-                    color: $color-white;
-                }
-                & .css-7drnjp{
-                    width: 10px !important;
-                    height: 10px !important;
-                    color: $color-white !important;
-                }
-            }
         }
     }
-    & .css-7drnjp{
-        width: 0px !important;
-        height: 0px !important;
-        color: $color-white !important;
-    }
-    & .css-14pt78w-MuiSlider-rail{
-        color: $color-white !important;
-    }
-    & .css-1gv0vcd-MuiSlider-track{
-        color: $color-white !important;
-    }
-    & .css-eg0mwd-MuiSlider-thumb{
-        width: 0px !important;
-        height: 0px !important;
+    & .--slider{
+        & .css-14pt78w-MuiSlider-rail{
+            color: $color-white !important;
+        }
+        & .css-1gv0vcd-MuiSlider-track{
+            color: $color-white !important;
+        }
+        & .css-eg0mwd-MuiSlider-thumb{
+            width: 0px !important;
+            height: 0px !important;
+        }
+        &:hover{
+            & .css-1gv0vcd-MuiSlider-track{
+                color: $color-green !important;
+            }
+            & .css-eg0mwd-MuiSlider-thumb{
+                width: 10px !important;
+                height: 10px !important;
+                color: $color-white !important;
+            }
+        }
     }
 }
