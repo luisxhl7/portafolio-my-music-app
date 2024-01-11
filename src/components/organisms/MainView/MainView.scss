@@ -37,5 +37,25 @@
         background-color: #3d0616;
         border-radius: 8px;
     }
-    
+    &__image-options{
+        position: relative;
+    }
+    &__options{
+        background-color: $color-grey;
+        position: absolute;
+        width: 120px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 22px 1px rgba(7, 7, 7, 0.712);
+        text-align: center;
+        top: 35px;
+        padding: 10px;
+        right: 10px;
+        color: $color-text-grey;
+        cursor: pointer;
+        transition: color 0.2s ease 0s, color 0.2s ease 0s;
+        font-size: 13px;
+        &:hover{
+            color: $color-white;
+        }
+    }
 }

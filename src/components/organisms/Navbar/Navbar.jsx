@@ -72,7 +72,7 @@ export const Navbar = () => {
                             (filterCategory === 'x' || filterCategory === 'Artistas') && <Button onClick={() => handleFilterCategory('Artistas')}>Artistas</Button>
                         }
                         {
-                            (filterCategory === 'x' || filterCategory === 'Albumes') && <Button onClick={() => handleFilterCategory('Albumes')}>Albumes</Button>
+                            (filterCategory === 'x' || filterCategory === 'Albumes') && <Button onClick={() => handleFilterCategory('Albumes')}>Álbumes</Button>
                         }
                     </div>
                 }

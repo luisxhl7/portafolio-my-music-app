@@ -12,6 +12,7 @@
         background-color: $color-green;
         padding: 15px 25PX;
         font-size: 25px;
+        margin: 10px 0px;
     }
     &__image{
         width: 100%;
@@ -34,7 +35,17 @@
             color: $color-white;
         }
         &.--copy{
+            margin: 5px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
         }
+    }
+    &__copy-icon{
+        color: #ffffff;
+        margin: 0px 5px;
+        width: 0.8em !important;
+        height: 0.8em !important;
+        font-size: 1.3rem !important;
     }
 }
