@@ -12,33 +12,73 @@
         grid-template-columns: 4fr;
     }
     &__content-left{
-        @include FromMax(970px) {
-            display: none;
-        }
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
+        @include FromMax(970px) {
+            display: none;
+        }
         &__content-image{
-            width: 60px;
+            min-width: 60px;
             height: 60px;
             background-image:  url(../../../assets/images/logo-my-music-app.png);
             background-repeat: no-repeat;
             background-size: contain;
             margin: 0px 10px;
-        }
-        & .image-player{
-            width: 60px;
-            height: 60px;
             border-radius: 5px;
-        }
-        & span{
-            & p{
-                color: $color-text-grey;
-                font-size: 0.6875rem;
+            &.--load{
+                background: linear-gradient(90deg, #121212, #282828, #121212, #282828);
+                background-size: 300% 100%;
+                animation: gradientAnimation 4s linear infinite;
+            }
+            & .image-player{
+                border-radius: 5px;
+                width: 60px;
+                height: 60px;
             }
         }
-        & h3{
-            font-size: 0.875rem;
+        &__content-text{
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            & span{
+                & p{
+                    color: $color-text-grey;
+                    font-size: 0.6875rem;
+                    min-height: 20px;
+                    max-height: 40px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    &.--load{
+                        min-height: 20px;
+                        width: 75px;
+                        overflow: hidden;
+                        background: linear-gradient(90deg, #121212, #282828, #121212, #282828);
+                        background-size: 300% 100%;
+                        animation: gradientAnimation 4s linear infinite;
+                    }
+                }
+            }
+            &__title{
+                font-size: 0.875rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                min-width: 40px;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                &.--load{
+                    min-height: 20px;
+                    width: 75px;
+                    overflow: hidden;
+                    background: linear-gradient(90deg, #121212, #282828, #121212, #282828);
+                    background-size: 300% 100%;
+                    animation: gradientAnimation 4s linear infinite;
+                }
+            }
         }
     }
     &__content-center{
@@ -100,8 +140,40 @@
                 margin: 0px 15px 0px 15px;
             }
         }
+        & .--slider{
+            & .css-14pt78w-MuiSlider-rail{
+                color: $color-white !important;
+            }
+            & .css-1gv0vcd-MuiSlider-track{
+                color: $color-white !important;
+            }
+            & .css-eg0mwd-MuiSlider-thumb{
+                width: 0px !important;
+                height: 0px !important;
+            }
+            & .css-7drnjp {
+                width: 0px !important;
+                height: 0px !important;
+                color: $color-white !important;
+            }
+            &:hover{
+                & .css-1gv0vcd-MuiSlider-track{
+                    color: $color-green !important;
+                }
+                & .css-eg0mwd-MuiSlider-thumb{
+                    width: 10px !important;
+                    height: 10px !important;
+                    color: $color-white !important;
+                }
+                & .css-7drnjp {
+                    width: 10px !important;
+                    height: 10px !important;
+                    color: $color-white !important;
+                }
+            }
+        }
     }
-    &__content-rigth{
+    &__content-right{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -121,36 +193,13 @@
             color: $color-green;
         }
     }
-    & .--slider{
-        & .css-14pt78w-MuiSlider-rail{
-            color: $color-white !important;
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 0%;
         }
-        & .css-1gv0vcd-MuiSlider-track{
-            color: $color-white !important;
-        }
-        & .css-eg0mwd-MuiSlider-thumb{
-            width: 0px !important;
-            height: 0px !important;
-        }
-        & .css-7drnjp {
-            width: 0px !important;
-            height: 0px !important;
-            color: $color-white !important;
-        }
-        &:hover{
-            & .css-1gv0vcd-MuiSlider-track{
-                color: $color-green !important;
-            }
-            & .css-eg0mwd-MuiSlider-thumb{
-                width: 10px !important;
-                height: 10px !important;
-                color: $color-white !important;
-            }
-            & .css-7drnjp {
-                width: 10px !important;
-                height: 10px !important;
-                color: $color-white !important;
-            }
+        100% {
+            background-position: 100% 0%;
         }
     }
 }

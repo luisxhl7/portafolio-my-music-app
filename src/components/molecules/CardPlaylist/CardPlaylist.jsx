@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { PlayArrow, FavoriteBorderOutlined, Favorite } from '@mui/icons-material'
 import { minutesConverter } from '../../../utils/minutes-converter'
 import SpotifyService from '../../../services/spotify-services'
+import { player_thunks } from '../../../store/thunks/player-thunks'
 import './CardPlaylist.scss'
 
 export const CardPlaylist = ({ position, image, musicName, artistName, albumName, duration_ms, id }) => {
+    const dispatch = useDispatch()
+    const [isSaved, setIsSaved] = useState()
+
     const timeDuration = minutesConverter(duration_ms)
-    const [isSaved, setisSaved] = useState()
 
     const track = {
+        id,
         image,
         musicName,
         artistName,
@@ -16,37 +21,38 @@ export const CardPlaylist = ({ position, image, musicName, artistName, albumName
     }
 
     const handlePlayTrack = () => {
-        sessionStorage.setItem('playTrack',JSON.stringify(track))
+        dispatch(player_thunks(track))
     }
 
     const handleSavedTrack = async(id) => {
         try {
             const resp = await SpotifyService.savedTrack(id)
-            resp.status === 200 && setisSaved(true)
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    const handleDeletedTrack = async(id) => {
-        try {
-            const resp = await SpotifyService.deletedTrack(id)
-            resp.status === 200 && setisSaved(false)
+            resp.status === 200 && setIsSaved(true)
         } catch (error) {
             console.log(error);
         }
     }
 
-    const hyandleCheckTrack = async(id) => {
+    const handleDeletedTrack = async(id) => {
+        try {
+            const resp = await SpotifyService.deletedTrack(id)
+            resp.status === 200 && setIsSaved(false)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const handleCheckTrack = async(id) => {
         try {
             const resp = await SpotifyService.checkSavedTrack(id)
-            setisSaved(resp?.data[0])
+            setIsSaved(resp?.data[0])
         } catch (error) {
             console.log(error)
         }
     }
 
     useEffect(() => {
-        hyandleCheckTrack(id)
+        handleCheckTrack(id)
     }, [id])
     
 

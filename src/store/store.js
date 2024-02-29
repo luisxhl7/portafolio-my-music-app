@@ -4,11 +4,12 @@ import tokenReducer from './slice/TokenSlice'
 import albumsSavedReducer from './slice/AlbumsSavedSlice'
 import playlistsSavedReducer from './slice/PlaylistsSavedSlice'
 import artistsReducer from './slice/ArtistsSlice'
-import albumsReducer from './slice/AlbumsSlisce'
+import albumsReducer from './slice/AlbumsSlice'
 import featuredPlaylistsReducer from './slice/FeaturedPlaylistsSlice'
 import searchReducer from './slice/SearchSlice'
 import playlistByIdReducer from './slice/PlaylistByIdSlice'
 import albumByIdReducer from './slice/AlbumByIdSlice'
+import playerReducer from './slice/PlayerSlice'
 
 export default configureStore({
     reducer: {
@@ -22,5 +23,6 @@ export default configureStore({
         search: searchReducer,
         playlistById: playlistByIdReducer,
         albumById: albumByIdReducer,
+        player: playerReducer,
     }
 })

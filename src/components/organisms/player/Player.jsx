@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Slider } from '@mui/material';
 import {
   SkipNext, 
@@ -14,39 +15,42 @@ import './Player.scss'
 
 
 export const Player = () => {
+  const {player, playerLoad} = useSelector((state) => state.player);
 
-  const [miEstado, setMiEstado] = useState(JSON.parse(sessionStorage.getItem(('playTrack'))));
+  const [miEstado, setMiEstado] = useState(player ? player : JSON.parse(localStorage.getItem(('playTrack'))));
 
-  const handlesessionStorageChange = (e) => {
-    if (e.key === 'playTrack') {
-      setMiEstado(e.newValue);
-    }
-  };
-  
   useEffect(() => {
-    
-    window.addEventListener('storage', handlesessionStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handlesessionStorageChange);
-    };
-  }, []);
+    if (player) {
+      setMiEstado(player)
+    }
+  }, [player])
+  
 
   return (
     <div className='player'>
       
       <div className='player__content-left'>
-        <div className='player__content-left__content-image'>
-          {miEstado &&
+        <div className={`player__content-left__content-image ${playerLoad ? '--load' : ''}`}>
+          {
+            playerLoad ?
+
+            <></>
+            :
             <Image 
               src={miEstado?.image}
               className='image-player'
             />
           }
         </div>
-        <div>
-          <h3>{miEstado?.musicName}</h3>
-          <span><p>{miEstado?.artistName}</p></span>
+        <div className={`player__content-left__content-text`}>
+          <h3 className={`player__content-left__content-text__title ${playerLoad ? '--load' : ''}`}>
+            {playerLoad ? '' : miEstado?.musicName}
+          </h3>
+          <span>
+            <p className={playerLoad ? '--load' : ''}>
+              {playerLoad ? '' : miEstado?.artistName}
+            </p>
+          </span>
         </div>
       </div>
 
@@ -65,7 +69,7 @@ export const Player = () => {
         </div>
       </div>
 
-      <div className='player__content-rigth'>
+      <div className='player__content-right'>
         <QueueMusic className='--queue'/>
         <VolumeDown className='--volume'/>
         <Slider className='--slider'/>

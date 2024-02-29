@@ -1,5 +1,5 @@
 import SpotifyService from "../../services/spotify-services"
-import { SET_ALBUMS, SET_LOAD } from "../slice/AlbumsSlisce";
+import { SET_ALBUMS, SET_LOAD } from "../slice/AlbumsSlice";
 
 export const getAlbumsSaved_thunks = () => {
     return async(dispatch, getState) => {

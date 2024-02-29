@@ -4,10 +4,11 @@ import './NavBarChoise.scss'
 
 export const NavBarChoise = ({title, Icon, link, className, onclick, closeNavBar}) => {
   return (
-    <li className='NavBarChoise' title={title}>
+    <li className='NavBarChoise'>
 
       <NavLink 
-        to={link && link} 
+        to={link && link}
+        title={title} 
         className={({isActive}) => `NavBarChoise__description ${className ? className : ''} ${isActive ? '--active' : ''}`}
         onClick={onclick}
       >

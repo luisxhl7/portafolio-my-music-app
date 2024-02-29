@@ -46,20 +46,21 @@ export const Navbar = () => {
     return (
         <nav className={`navbar ${ closeNavBar ? '--closeNavBar' : '' }`}>
             
-            <div className={`navbar__menu ${ closeNavBar ? '--closeNavBar' : '' }`}>
+            <ul className={`navbar__menu ${ closeNavBar ? '--closeNavBar' : '' }`}>
                 <NavBarChoise title='Inicio' Icon={<Home/>} link='/home' closeNavBar={closeNavBar}/>
                 <NavBarChoise title='Buscar' Icon={<Search/>} link='/search' closeNavBar={closeNavBar}/>
-            </div> 
+            </ul> 
             
             <div className={`navbar__library ${ closeNavBar ? '--closeNavBar' : '' }`}>
-                
-                <NavBarChoise
-                    className='--nav-library'
-                    title='Tu biblioteca' 
-                    Icon={<LibraryMusicOutlined />} 
-                    onclick={handleCloseNavBar}
-                    closeNavBar={closeNavBar}
-                />
+                <ul>
+                    <NavBarChoise
+                        className='--nav-library'
+                        title='Tu biblioteca' 
+                        Icon={<LibraryMusicOutlined />} 
+                        onclick={handleCloseNavBar}
+                        closeNavBar={closeNavBar}
+                    />
+                </ul>
                 {!closeNavBar &&
                     <div className='navbar__content-buttons-filters'>
                         {
