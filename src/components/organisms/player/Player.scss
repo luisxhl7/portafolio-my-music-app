@@ -137,38 +137,7 @@
                 margin: 0px 15px 0px 15px;
             }
         }
-        & .--slider{
-            & .css-14pt78w-MuiSlider-rail{
-                color: $color-white !important;
-            }
-            & .css-1gv0vcd-MuiSlider-track{
-                color: $color-white !important;
-            }
-            & .css-eg0mwd-MuiSlider-thumb{
-                width: 0px !important;
-                height: 0px !important;
-            }
-            & .css-7drnjp {
-                width: 0px !important;
-                height: 0px !important;
-                color: $color-white !important;
-            }
-            &:hover{
-                & .css-1gv0vcd-MuiSlider-track{
-                    color: $color-green !important;
-                }
-                & .css-eg0mwd-MuiSlider-thumb{
-                    width: 10px !important;
-                    height: 10px !important;
-                    color: $color-white !important;
-                }
-                & .css-7drnjp {
-                    width: 10px !important;
-                    height: 10px !important;
-                    color: $color-white !important;
-                }
-            }
-        }
+
     }
     &__content-right{
         display: flex;
@@ -188,6 +157,38 @@
             width: 100%;
             max-width: 100px;
             color: $color-green;
+        }
+    }
+    & .--slider{
+        & .css-14pt78w-MuiSlider-rail{
+            color: $color-white !important;
+        }
+        & .css-1gv0vcd-MuiSlider-track{
+            color: $color-white !important;
+        }
+        & .css-eg0mwd-MuiSlider-thumb{
+            width: 0px !important;
+            height: 0px !important;
+        }
+        & .css-7drnjp {
+            width: 0px !important;
+            height: 0px !important;
+            color: $color-white !important;
+        }
+        &:hover{
+            & .css-1gv0vcd-MuiSlider-track{
+                color: $color-green !important;
+            }
+            & .css-eg0mwd-MuiSlider-thumb{
+                width: 10px !important;
+                height: 10px !important;
+                color: $color-white !important;
+            }
+            & .css-7drnjp {
+                width: 10px !important;
+                height: 10px !important;
+                color: $color-white !important;
+            }
         }
     }
 
