@@ -11,6 +11,7 @@ import {
   PlayCircle
 } from '@mui/icons-material';
 import { Image } from '../../atoms/image'
+import images from '../../../assets/images';
 import './Player.scss'
 
 
@@ -33,11 +34,10 @@ export const Player = () => {
         <div className={`player__content-left__content-image ${playerLoad ? '--load' : ''}`}>
           {
             playerLoad ?
-
             <></>
             :
             <Image 
-              src={miEstado?.image}
+              src={miEstado?.image ? miEstado?.image : images.imageLogin}
               className='image-player'
             />
           }

@@ -6,7 +6,7 @@ export const player_thunks = (track) => {
         setTimeout(() => {
             localStorage.setItem('playTrack', JSON.stringify(track))
             dispatch( SET_PLAYER({player: {...track}}) );
-        }, 2000);
+        }, 1000);
     
     }
 }

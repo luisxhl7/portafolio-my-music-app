@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { PlayArrow, FavoriteBorderOutlined, Favorite } from '@mui/icons-material'
 import { minutesConverter } from '../../../utils/minutes-converter'
 import SpotifyService from '../../../services/spotify-services'
@@ -8,6 +8,7 @@ import './CardPlaylist.scss'
 
 export const CardPlaylist = ({ position, image, musicName, artistName, albumName, duration_ms, id }) => {
     const dispatch = useDispatch()
+    const {player} = useSelector((state) => state.player);
     const [isSaved, setIsSaved] = useState()
 
     const timeDuration = minutesConverter(duration_ms)
@@ -21,7 +22,13 @@ export const CardPlaylist = ({ position, image, musicName, artistName, albumName
     }
 
     const handlePlayTrack = () => {
-        dispatch(player_thunks(track))
+        if (player?.id) {
+            if (player.id !== id) {
+                dispatch(player_thunks(track))            
+            }    
+        }else{
+            dispatch(player_thunks(track))            
+        }
     }
 
     const handleSavedTrack = async(id) => {
